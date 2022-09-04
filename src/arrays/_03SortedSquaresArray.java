@@ -1,3 +1,7 @@
+/*
+Write a function that takes in a non-empty array of integers that are sorted in ascending order and returns a new array
+of the same length with the squares of the original integers also sorted in ascending order
+ */
 package arrays;
 
 import java.util.Arrays;
@@ -7,6 +11,13 @@ public class _03SortedSquaresArray {
 
     }
 
+
+
+//-------------------------------------------------------------------------------------------------------SOLUTION 1-----
+
+//  - Time complexity is O(N.log(N)) because that's the best time complexity when sorting an array using a sorting algo-
+//  rithm like quicksort or mergesort.
+//  - Space complexity is O(N).
     public static int[] sortedSquares(int[] array) {
         int[] sortedArray = new int[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -16,7 +27,15 @@ public class _03SortedSquaresArray {
         return sortedArray;
     }
 
-    // alternative, linear-time solution that only works because the array is sorted
+
+
+
+//-------------------------------------------------------------------------------------------------------SOLUTION 1-----
+
+//  On this solution we add pointers to the beginning and end of the given array and compare the module of the pointers
+//  before adding them to the new, sorted array. This solution only works because the input array is sorted.
+//  - Time complexity is O(N).
+//  - Space complexity is O(N).
     public static int[] linearSortedSquares(int[] array) {
         int[] sortedArray = new int[array.length];
         int start = 0;
@@ -39,7 +58,3 @@ public class _03SortedSquaresArray {
         return sortedArray;
     }
 }
-/*
-Wirte a function that takes in a non-empty array of integers that are sorted in ascending order and returns a new array
-of the same length with the squares of the original integers also sorted in ascending order
- */

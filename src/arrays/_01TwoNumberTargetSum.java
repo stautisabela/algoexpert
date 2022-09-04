@@ -1,3 +1,8 @@
+/*
+Write a function that takes in a non-empty array of distinct integers and an integer representing a target sum. If any
+two numbers in the input array sum up to the target sum, the function should return them in an array, in any order. If
+no two numbers sum up to the target sum, the function should return an empty array.
+ */
 package arrays;
 
 import java.util.Arrays;
@@ -12,7 +17,15 @@ public class _01TwoNumberTargetSum {
         pointerSolution(array, targetSum);
     }
 
-    // this solution is preferred to nesting 2 for loops because it has less time complexity, although it uses more space
+
+
+//-------------------------------------------------------------------------------------------------------SOLUTION 1-----
+
+//  On this solution we create an empty set to make use of its contain() method. We traverse the array and see if the
+//  set has the other number needed to hit the target sum. In other languages it would use a HashMap with the number as
+//  key and True as value.
+//  - Time complexity is O(N) where N is the length of the given array, because we traverse the array.
+//  - Space complexity is O(N) where N is the length of the given array, because we add the values to a Set.
     public static int[] hashTableSolution(int[] array, int targetSum) {
         Set<Integer> numbers = new HashSet<>();
 
@@ -26,7 +39,14 @@ public class _01TwoNumberTargetSum {
         return new int[0];
     }
 
-    // this has less space complexity (constant space) than the hash table solution, but a little bit more time complexity
+
+
+//-------------------------------------------------------------------------------------------------------SOLUTION 2-----
+
+//  On this solution we sort the array and create pointers in the beginning and end of the array. We sum both pointers
+//  and move them depending on the sum being more or less than the target sum.
+//  - Time complexity if O(N.log(N)), the same as a quicksort algorithm.
+//  - Space complexity is O(1).
     public static int[] pointerSolution(int[] array, int targetSum) {
         int left = 0;
         int right = array.length - 1;
@@ -42,8 +62,3 @@ public class _01TwoNumberTargetSum {
         return new int[0];
     }
 }
-/*
-Write a fgunction that takes in a non-empty array pf distinct integers and an integer representing a target sum. If any
-two numbers in the input array sum up to the target sum, the function should return them in an array, in any order. If
-no two numbers sum up to the target sum, the function should return an empty array.
- */
