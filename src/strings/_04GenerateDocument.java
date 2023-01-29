@@ -62,8 +62,8 @@ public class _04GenerateDocument {
 
 //-------------------------------------------------------------------------------------------------------SOLUTION 2-----
 
-//  On this solution we create a HashMap for each character on the given character string and how many times it appears.
-//  Then we go through the given document String and check if all its characters are in the HashMap.
+//  On this solution we create a HashMap for each character on the given character string and how many times it appears,
+//  then we go through the given document String and check if all its characters are in the HashMap.
 //  - Time complexity is O(C*(N+M)), where C is the number of unique characters in the document, N is the length of
 //  "characters", and M is the length of "document".
 //  - Space complexity is.
